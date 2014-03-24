@@ -1,0 +1,57 @@
+// Font-faces
+
+//@import "compass/css3/font-face"
+
+// Compass Imports
+
+@import "blueprint"
+@import "compass/reset"
+@import "compass/utilities"
+@import "compass/layout"
+@import "compass/css3"
+@import "compass/support"
+
+=blueprint($body_selector: "body")
+  @include blueprint-typography($body_selector)
+  @include blueprint-utilities
+  @include blueprint-debug
+  @include blueprint-interaction
+  @include blueprint-color
+
+// Variables
+
+$blueprint_grid_columns: 25.25
+$blueprint_grid_width: 30px
+$blueprint_grid_margin: 10px
+
+$primaryColor:  #ff8c1a
+$secondaryColor: $primaryColor + #1a1a1a
+
+$bg: #190D04
+
+$default: Verdana, Arial, Tahoma, Helvetica, sans-serif
+$font: Arial, Tahoma, Helvetica, sans-serif
+
+// Global Mixins
+
+@mixin constant-width( $width )
+  width: $width
+  min-width: $width
+  max-width: $width
+
+
+@mixin constant-height( $height )
+  height: $height
+  min-height: $height
+  max-height: $height
+
+@mixin variable-height( $h1: 300px, $h2: 800px)
+  height: $h1
+  min-height: $h1
+  max-height: $h2
+
+// Spriting
+
+@import "sprite/*.png"
+@include all-sprite-sprites
+

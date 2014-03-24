@@ -1,0 +1,96 @@
+//!
+//Theme Name: 	Starkers
+//Theme URI: 		http://viewportindustries.com/products/starkers
+//Description: 	The totally nude Wordpress theme!
+//Version: 		4.0
+//Author: 		Elliot Jay Stocks & Keir Whitaker
+//Author URI: 	http://viewportindustries.com
+//Tags: 			starkers, naked, clean, basic
+//
+
+// Imports
+
+@charset "UTF-8"
+
+@import "css/reset.css"
+@import "constant"
+@import "editor"
+@import "general/blog"
+@import "general/buttons"
+@import "general/forms"
+@import "general/lists"
+@import "general/misc"
+@import "general/tables"
+@import "general/text"
+
+//
+
+body
+  background: #222 url("images/bg.png") repeat 0 0
+
+.container
+  margin: auto
+  width: 960px
+  padding: 20px 15px 0
+  background: #fff
+  +box-shadow(#1a1a1a 0 0 5px 0)
+
+.title
+  display: inline-block
+  vertical-align: top
+  a
+    @extend .sprite-ensenda
+    display: block
+    width: 948px
+    height: 54px
+    color: transparent
+    text-indent: -9999px
+
+// Sections
+
+.main
+  padding: 20px 20px 0
+  float: left
+  width: 100%
+
+article
+  float: left
+  width: 74.5%
+  border-right: 1px solid #ccc
+  margin-right: -1px
+  padding-right: 35px
+  padding-bottom: 30px
+  min-height: 400px
+
+aside
+  float: left
+  width: 25.5%
+  padding-left: 30px
+  border-left: 1px solid #ccc
+  padding-bottom: 30px
+
+//
+
+.smartway
+  display: inline-block
+  margin-top: 40px
+  @extend .sprite-smartway
+  width: 199px
+  height: 123px
+
+
+//
+
+footer
+  display: block
+  clear: both
+  background: #231f20
+  border-top: 10px solid $primaryColor
+  padding: 10px 15px
+  margin: 0px -15px 0
+  p
+    margin: 0
+    color: #999
+    font-size: 1em
+//@media print
+//  @import "print"

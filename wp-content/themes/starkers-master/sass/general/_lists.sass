@@ -1,0 +1,151 @@
+ul
+  list-style: outside disc
+  margin-top: 18px
+  li
+    list-style: outside disc
+ol
+  list-style: outside decimal
+  ol
+    list-style: outside lower-alpha
+ul, ol
+  clear: both
+  margin: 0px 0 12px 20px
+  font: normal 1.3em $default
+  hr
+    margin-left: -40px
+  ul, ol
+    font-size: 1.0em
+    margin-left: 20px
+    margin-bottom: 0px
+li
+  margin-bottom: 5px
+  p
+    font-size: 1.0em
+  li
+    margin-top: 6px
+
+%reset-list
+  margin: 0
+  padding: 0
+  font-size: 1.0em
+  li, ul
+    margin: 0
+    padding: 0
+
+// Main navigation
+
+.menu
+  display: inline-block
+  width: 100%
+  background: #1c1c1c
+  +background-image( linear-gradient( #686868 0%, #1c1c1c 50%, #1c1c1c 90%, #686868 100% ) )
+  +border-radius( 3px )
+  ul
+    @extend %reset-list
+    display: inline-block
+    li
+      display: inline-block
+      position: relative
+      &:first-child
+        +border-left-radius( 3px )
+      &:hover
+        color: #fff
+        background: $primaryColor
+        +background-image( linear-gradient( lighten($primaryColor, 6%) 0%, $primaryColor 35% ) )
+        ul
+          display: block
+      &.page_item_has_children
+        &:hover
+          & > a
+            &:after
+              color: #ffc18b
+      &.current_page_item, &.current_page_parent
+        background: $primaryColor
+        +background-image( linear-gradient( lighten($primaryColor, 6%) 0%, $primaryColor 35% ) )
+        font-weight: bold
+      &.page_item_has_children
+        & > a
+          &:after
+            content: "▼"
+            display: inline-block
+            margin-left: 4px
+            color: #878787
+        &.current_page_parent, &.current_page_item
+          a
+            &:after
+              color: #ffc18b
+    a
+      color: #fff
+      display: inline-block
+      line-height: 40px
+      padding: 0 20px
+      font-size: 1.3em
+
+    ul
+      position: absolute
+      display: none
+      background: #454545
+      top: 40px
+      left: 0
+      min-width: 100%
+      z-index: 1000
+      li
+        display: block
+        &:first-child
+          +border-left-radius( 0px )
+        &:hover
+          background: darken(#454545, 30%)
+        &.current_page_item
+          background: $primaryColor
+      a
+        display: block
+        line-height: 1.0em
+        padding: 6px 20px
+        border-bottom: 1px solid darken(#454545, 10%)
+        +nowrap
+      ul
+        display: none
+
+//  Sidebar menu
+
+.sidebar-menu
+  margin-bottom: 40px
+  ul
+    @extend %reset-list
+    list-style: none
+  li
+    display: none
+    +border-radius( 0px )
+    &.page_item_has_children
+      &.current_page_item, &.current_page_parent
+        display: block
+      &.current_page_parent, &.current_page_item
+        & > a
+          background: #eee
+          padding: 5px 10px
+          font: bold 1.3em $font
+          letter-spacing: 0.5px
+          &:hover
+            color: #222
+      .children
+        margin-top: 5px
+        margin-left: 10px
+        li
+          display: block
+          a
+            padding: 5px 0
+            font-size: 1.2em
+            &:before
+              display: inline-block
+              content: ""
+              @extend .sprite-leaf
+              width: 13px
+              height: 10px
+              margin-right: 10px
+          &.current_page_item
+            a
+              color: $primaryColor
+              font-weight: bold
+  a
+    display: block
+    color: #222

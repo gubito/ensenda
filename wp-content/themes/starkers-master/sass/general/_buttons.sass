@@ -1,0 +1,71 @@
+input[type="submit"]
+  margin: 0
+
+=button( $color: $primaryColor, $text-color: #fcfcfc, $font-size: 1.4em, $hover: true )
+  display:  inline-block
+  background:  darken( $color, 10% )
+  +background-image( linear-gradient( lighten( $color, 6% ) 0%, $color 40% ) )
+  +box-shadow( #666 0 1px 2px 0, darken( $color, 6% ) 0 1px 4px 0 inset )
+  border: 1px solid darken( $color, 10% )
+  +border-radius( 3px )
+  padding:  10px 20px
+  color: $text-color
+  margin-right: 6px
+  text-align: center
+  font: bold $font-size $default 
+  cursor: pointer
+  @if $hover
+    &:hover
+      color: darken( $text-color, 5% )
+      background: $color
+      +background-image( linear-gradient( darken( $color, 10% ) 20%, darken( $color, 6% ) 80% ) )
+      +box-shadow( darken( $color, 20% ) 0 0 6px 0 inset )
+
+.button-wrapper
+  display: inline-block
+
+// icons
+
+=icon( $name, $w: 16px, $h: 16px)
+  display: inline-block
+  @extend .sprite-#{$name}
+  width: $w
+  height: $h
+  opacity: 0.6
+  margin: 0 4px 2px
+  color: transparent
+  vertical-align: middle
+  position: relative
+  text-indent: -9999px
+  text-align: left
+  &:hover
+    opacity: 1.0
+    color: transparent
+    &:after
+      z-index: 1
+      opacity: 1.0
+      padding: 3px 6px
+      width: auto
+      height: auto
+      +transition( all 0.1s ease-in 2s )
+  &:after
+    content: attr(alt)
+    display: inline-block
+    position: absolute
+    background: #FEF9E0
+    border: 1px solid darken(#FEF9E0, 6%)
+    font: normal 1em $default
+    color: #444
+    left: 6px
+    top: -10px
+    text-indent: 0px
+    +nowrap
+    z-index: -1
+    opacity: 0.0
+    +box-shadow( #999 0 0 3px 0 )
+    padding: 0
+    width: 0
+    height: 0
+    overflow: hidden
+
+

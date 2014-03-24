@@ -1,0 +1,135 @@
+body
+  color: #404041
+  font: normal 62.5% $default
+
+.center
+  text-align: center
+.right_align
+  text-align: right
+.see-more
+  text-align: right
+  
+// misc
+
+i, em
+  font-style: italic
+b, strong
+  font-weight: bold
+  color: #1a1a1a
+a
+  b, strong
+    color: $primaryColor
+sup, sub
+  font-size: 0.7em
+sup
+  vertical-align: super
+sub
+  vertical-align: sub
+
+// Basics
+
+a, span.gc-cs-link
+  color: $primaryColor
+  text-decoration: none
+  &:hover
+    color: $secondaryColor
+
+p
+  margin: 3px 0 12px
+  line-height: 1.4em
+  font-size: 1.3em
+  a
+    font-size: 1.0em
+
+blockquote
+  margin: 20px
+  padding: 0 0 0 20px
+  border-left: 1px solid #999
+  +border-radius( 5px )
+  p
+    font: normal 1.2em $default
+    line-height: 1.6em
+    text-align: justify
+    margin-bottom: 20px
+
+.leaf, .leaf strong, .leaf b
+  color: #1a1a1a
+.leaf
+  &:after
+    @extend .sprite-leaf
+    content: ""
+    display: inline-block
+    width: 13px
+    height: 10px
+    margin-left: 5px
+  &:hover, &:hover strong, &:hover b
+    color: $primaryColor
+
+.quote
+  text-indent: -40px
+  margin-left: 40px
+  font-style: italic
+  line-height: 1em
+  color: #222
+  &:before
+    @extend .sprite-open-quote
+    content: ""
+    width: 36px
+    height: 25px
+    display: inline-block
+    margin: 0px 5px 0 0
+    vertical-align: middle
+
+
+// Headers
+
+h1, h2, h3, h4, h5
+  margin: 0
+  font-weight: bold
+  font-family: $font
+h1 
+  font-size: 3.2em
+  margin-bottom: 10px
+  text-transform: uppercase
+
+h2
+  font-size: 1.8em
+  clear: both
+  margin-bottom: 10px
+
+time, .category-list
+  display: inline-block
+  margin: 0 10px 0 0
+  font: italic 1.2em $default
+  color: #999
+
+h3
+  font: normal 3.2em $font
+  margin-bottom: 10px
+  text-transform: uppercase
+  &.post-title
+    font: bold 2.0em $font
+    text-transform: none
+    margin-bottom: 3px
+  &.comment-reply-title
+    font: bold 1.6em $font
+    margin-top: 30px
+
+h4
+  font: normal 2.2em $font
+  color: #1a1a1a
+  margin-bottom: 6px
+  text-transform: uppercase
+
+h5
+  font: bold 1.6em $default
+  color: #1a1a1a
+  margin-bottom: 6px
+
+.numbered
+  counter-increment: numbered
+  &:before
+    content: counter(numbered)
+    display: inline-block
+    margin-right: 6px
+

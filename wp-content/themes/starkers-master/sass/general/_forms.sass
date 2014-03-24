@@ -1,0 +1,187 @@
+%reset
+  font: normal 1.0em $default
+  width: auto
+  text-align: left
+  margin: 0
+  padding: 0
+
+.field
+  +float-left
+  position: relative
+  clear: both
+  width: 100%
+  display: block
+  padding: 5px 0
+  line-height: 36px
+  min-height: 48px
+
+label
+  font: normal 1.2em $default
+  display: inline-block
+  width: 200px
+  text-align: right
+  color: #333 !important
+  vertical-align: top
+  margin: 8px 10px 0 0
+  &.required
+    color: #333
+    &:before
+      content: "*"
+      display: inline-block
+      font-size: 1.2em
+      padding-right: 2px
+      color: red
+  &.block
+    display: block
+    width: auto
+    text-align: left
+  & + p
+    display: inline-block
+    font: normal 1.5em $default
+    margin: 0
+    padding: 0
+    color: #1a1a1a
+  & + b
+    font-size: 1.5em
+
+.generic-input
+  border: 1px solid #ccc
+  +border-radius( 4px )
+  +box-shadow(  #ccc 0 1px 4px 0 inset )
+  font: normal 1.5em $default
+  line-height: 36px
+  height: 36px
+  margin: 0 6px 0 0
+  padding: 0px 6px
+  width: 400px
+
+select
+  font: normal 1.6em $default
+  line-height: 36px
+  height: 36px
+  margin: 0
+  padding: 0
+  width: 400px
+  &.sm_select
+    width: 60px
+
+%following_label
+  font: normal 1.6em $default
+  color: #1a1a1a
+  vertical-align: top
+  margin: 0px 20px 0 0px
+  line-height: 36px
+
+input, select
+  &.text, &.date, &.sm_text, &.med_text, &.xmed_text, &.lg_text
+    @extend .generic-input
+    background: #fff
+  &.file
+    width: 400px
+    margin-right: 6px
+  &.date
+    width: auto
+  & + label
+    width: auto
+    text-align: left
+    margin-left: 30px
+  & + p
+    color: #999
+    display: inline-block
+    margin: 0
+    font-size: 1.3em
+  &.checkbox, &.radio, &[type="checkbox"], &[type="radio"]
+    margin: 0 2px 0 0
+    font-size: 1.8em
+    line-height: 36px
+    cursor: pointer
+    & + label
+      @extend %following_label
+    &:checked
+      & + label .answer
+        visibility: visible
+  &.lg_text
+    width: 205px
+  &.xmed_text
+    width: 152px
+  &.med_text
+    width: 120px
+  &.sm_text
+    width: 60px
+  &.state
+    @extend .lg_text
+
+input, select
+  & + a
+    display: inline-block
+    font-style: italic
+    font-size: 1.2em
+    line-height: 20px
+    margin-left: 12px
+
+textarea
+  display: inline-block
+  @extend .generic-input
+  +constant-width( 600px )
+  min-height: 80px
+  height: 80px
+  max-height: 600px
+  padding: 6px
+  line-height: 1.2em
+  &.vfb-textarea
+    +constant-width( 315px )
+
+// Comment form
+
+.comment-label
+  display: block
+  text-align: left
+  font: normal 1em $default
+
+.form-allowed-tags
+  font: italic 1.2em $default
+  color: #999
+
+// Visual Form Builder
+
+form.visual-form-builder
+  margin: 0
+.vfb-section-div
+  background: none
+.vfb-time
+  width: 50px
+  .vfb-select
+    width: 100%
+.vfb-span
+  label
+    width: auto
+    text-align: left
+    padding: 4px 0 6px
+.visual-form-builder
+  fieldset
+    margin: 0 0 15px
+  label
+    &.error
+      color: $primaryColor !important
+      display: inline-block
+      padding: 4px
+      text-align: left
+      width: auto
+    &.vfb-choice
+      margin-left: 16px
+      margin-right: 6px
+      font-size: 1.2em
+  .vfb-legend
+    border: none
+  .vfb-text, textarea
+    &.error
+      border: 1px solid pink
+.vfb-item-secret
+  display: none !important
+
+// mailchimp
+
+.widget
+  label
+    text-align: left
+  
